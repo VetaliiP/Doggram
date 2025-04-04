@@ -26,15 +26,11 @@ export const Auth: React.FC = () => {
         localStorage.setItem("auth", "true");
 
         // Перенаправляем на главную страницу
-        navigate("/");
+        navigate("/main");
     };
 
     return (
         <div className="flex flex-col items-center justify-center w-[400px] h-auto bg-[#565655E5] opacity-90 text-[#F0EDE5] rounded-[10px] mx-10 my-5 py-14 ">
-            {/* <h2 className="flex flex-col items-center text-6xl font-bold mb-20">
-                <span>DOG</span>
-                <span>GRAM</span>
-            </h2> */}
             <img src="/DOG.svg" className="mb-8" />
             <img src="/GRAM.svg" className="mb-20" />
             <form onSubmit={(e) => e.preventDefault()} className="flex flex-col items-stretch gap-4 w-[300px]">

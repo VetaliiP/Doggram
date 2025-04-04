@@ -5,6 +5,7 @@ import { Main } from './pages/Main/Main';
 import './App.css'
 import { Auth } from './pages/Auth/Auth';
 import { Registration } from './pages/Auth/Registration';
+import { Layout } from './components/Layout/Layout';
 
 
 
@@ -19,11 +20,14 @@ export const AppRouter: FC = () => {
                     <Route
                         path="/"
                         element={
-                            isAuthenticated ? <Main /> : <Navigate to="/auth" />
+                            isAuthenticated ? <Navigate to="/main" /> : <Navigate to="/auth" />
                         }
                     />
                     <Route path="/auth" element={<Auth />} />
                     <Route path="/register" element={<Registration />} />
+                    <Route path='/' element={<Layout />}>
+                        <Route path='main' element={<Main />} />
+                    </Route>
                 </Routes>
             </Router>
         </AuthProvider>
